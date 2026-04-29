@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
     <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tablero de Jira</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/styles.css" />
     </head>
+
     <body>
-        <h1>Hello World!</h1>
+        <div class="jira-card">
+            <h3>Tablero de Jira</h3>
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Añadir una tarea...">
+                <button id="addBtn" class="btn-add">Crear</button>
+                <button id="deleteBtn" class="btn-delete">Eliminar</button>
+                <button id="deleteBtn" class="btn-edit">editar</button>
+
+            </div>
+            <ul id="taskList" class="task-list">
+
+            </ul>
+        </div>
+
+        <script type="module" src="./app.js"></script>
     </body>
+
 </html>
