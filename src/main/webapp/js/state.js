@@ -3,6 +3,12 @@ const API_URL = "http://localhost.8080/TasksAPI/api/task"
 export let tasks = [];
 
 
+export const fetchTasks= async ()=>{
+    const response = await fetch(API_URL);
+    tasks=await response.json();
+    return tasks;
+};
+
 //Añadir tarea
 export const addTask = (text) => {
     const response = await fetch(API_URL, {
@@ -11,7 +17,7 @@ export const addTask = (text) => {
         body: JSON.stringify({ text: text, completed: false })
     });
 
-    const task = { id: Date.now(), text, completed: false };
+    const task = await response.json();
     tasks.push(task);
     return tasks;
 };
